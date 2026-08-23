@@ -1,4 +1,4 @@
-class SourceExtension {
+var SourceExtension = class {
     constructor() {
         this.id = "asura.en";
         this.name = "Asura Scans";

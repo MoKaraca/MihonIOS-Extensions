@@ -1,4 +1,4 @@
-class SourceExtension {
+var SourceExtension = class {
     constructor() {
         this.id = "mangadex_en";
         this.name = "MangaDex";
