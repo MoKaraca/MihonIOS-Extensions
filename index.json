@@ -7,8 +7,8 @@
     "versionCode": 1,
     "description": "MangaDex manga source",
     "author": "MihonIOS Project",
-    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/icons/mangadex.png",
-    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/sources/mangadex.js",
+    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/refs/heads/main/icons/mangadex.png",
+    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/refs/heads/main/sources/mangadex.js",
     "nsfw": false,
     "apiVersion": 1,
     "entryPoint": "mangadex.js"
@@ -21,8 +21,8 @@
     "versionCode": 1,
     "description": "Asura Scans comic source",
     "author": "MihonIOS Project",
-    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/icons/asura.png",
-    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/sources/asura.js",
+    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/refs/heads/main/icons/asura.png",
+    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/refs/heads/main/sources/asura.js",
     "nsfw": false,
     "apiVersion": 1,
     "entryPoint": "asura.js"
