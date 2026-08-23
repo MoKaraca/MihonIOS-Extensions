@@ -5,7 +5,7 @@ var SourceExtension = class {
         this.lang = "en";
         this.version = "1.0.0";
         this.supportsLatest = true;
-        this.baseUrl = "https://asuracomic.net";
+        this.baseUrl = "https://asurascans.com";
     }
 
     async fetchPopularManga(page) {
@@ -94,12 +94,13 @@ var SourceExtension = class {
         const results = [];
         
         // Match chapter links inside the Astro HTML
-        const chapRegex = /<a href="(\/comics\/[^"]+)"[^>]*>.*?Chapter\s*(\d+(\.\d+)?)/gi;
+        const chapRegex = /<a href="(\/comics\/[^"]+)"[^>]*>.*?Chapter\s*(?:<!--\s*-->\s*)?(\d+(\.\d+)?)/gi;
         
         let match;
         const seen = new Set();
         while ((match = chapRegex.exec(html)) !== null) {
-            if (!seen.has(match[1])) {
+            // Only add if the chapter URL belongs to the current manga URL
+            if (match[1].startsWith(url) && !seen.has(match[1])) {
                 seen.add(match[1]);
                 results.push({
                     name: `Chapter ${match[2]}`,
@@ -116,14 +117,15 @@ var SourceExtension = class {
         const html = await nativeFetchHTML(`${this.baseUrl}${chapterUrl}`);
         const results = [];
         
-        // Extract images from the reader container
-        const imgRegex = /<img[^>]*src="([^"]+)"[^>]*class="[^"]*object-cover[^"]*"/gi;
+        // Extract images from Astro data props
+        const imgRegex = /"(https:\/\/[^"]+\/chapters\/[^"]+)"/gi;
         
         let match;
         let idx = 0;
+        const seen = new Set();
         while ((match = imgRegex.exec(html)) !== null) {
-            // Ignore logo/UI images if any, just grab the actual pages
-            if (match[1].includes("/pages/")) {
+            if (!seen.has(match[1])) {
+                seen.add(match[1]);
                 results.push({
                     index: idx++,
                     url: chapterUrl,
