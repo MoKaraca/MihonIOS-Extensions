@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mangadex.en",
+    "name": "MangaDex",
+    "lang": "en",
+    "version": "1.0.0",
+    "versionCode": 1,
+    "description": "MangaDex manga source",
+    "author": "MihonIOS Project",
+    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/icons/mangadex.png",
+    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/sources/mangadex.js",
+    "nsfw": false,
+    "apiVersion": 1,
+    "entryPoint": "mangadex.js"
+  },
+  {
+    "id": "asura.en",
+    "name": "Asura Scans",
+    "lang": "en",
+    "version": "1.0.0",
+    "versionCode": 1,
+    "description": "Asura Scans comic source",
+    "author": "MihonIOS Project",
+    "iconUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/icons/asura.png",
+    "sourceUrl": "https://raw.githubusercontent.com/MoKaraca/MihonIOS-Extensions/main/sources/asura.js",
+    "nsfw": false,
+    "apiVersion": 1,
+    "entryPoint": "asura.js"
+  }
+]
