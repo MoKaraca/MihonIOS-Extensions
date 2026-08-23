@@ -76,7 +76,11 @@ var SourceExtension = class {
         const jsonString = await nativeFetchHTML(apiUrl);
         const data = JSON.parse(jsonString);
         
-        return JSON.stringify(data.data.map(chapter => {
+        const validChapters = data.data.filter(chapter => {
+            return chapter.attributes.pages > 0 && !chapter.attributes.externalUrl;
+        });
+        
+        return JSON.stringify(validChapters.map(chapter => {
             return {
                 name: chapter.attributes.title ? `Ch. ${chapter.attributes.chapter} - ${chapter.attributes.title}` : `Ch. ${chapter.attributes.chapter}`,
                 url: chapter.id, // url becomes chapter ID
@@ -93,6 +97,9 @@ var SourceExtension = class {
         const data = JSON.parse(jsonString);
         
         const host = data.baseUrl;
+        if (!data.chapter || !data.chapter.hash || !data.chapter.data) {
+            return JSON.stringify([]);
+        }
         const hash = data.chapter.hash;
         
         return JSON.stringify(data.chapter.data.map((filename, index) => {
