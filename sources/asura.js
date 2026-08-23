@@ -24,7 +24,7 @@ var SourceExtension = class {
                 title: match[3],
                 url: `/comics/${match[1]}`, // This is the manga URL path
                 coverUrl: match[2],
-                status: 1
+                status: 1, id: match[1], genres: [], initialized: false
             });
         }
         
@@ -52,7 +52,7 @@ var SourceExtension = class {
                 title: match[3],
                 url: `/comics/${match[1]}`,
                 coverUrl: match[2],
-                status: 1
+                status: 1, id: match[1], genres: [], initialized: false
             });
         }
         return JSON.stringify(results);
@@ -69,7 +69,7 @@ var SourceExtension = class {
                 title: match[3],
                 url: `/comics/${match[1]}`,
                 coverUrl: match[2],
-                status: 1
+                status: 1, id: match[1], genres: [], initialized: false
             });
         }
         return JSON.stringify(results);

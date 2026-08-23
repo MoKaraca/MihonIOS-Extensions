@@ -26,7 +26,7 @@ var SourceExtension = class {
                 title: manga.attributes.title.en || Object.values(manga.attributes.title)[0],
                 url: manga.id,
                 coverUrl: coverUrl,
-                status: 1
+                status: 1, id: manga.id, genres: [], initialized: false
             };
         }));
     }
@@ -49,7 +49,7 @@ var SourceExtension = class {
                 title: manga.attributes.title.en || Object.values(manga.attributes.title)[0],
                 url: manga.id,
                 coverUrl: coverUrl,
-                status: 1
+                status: 1, id: manga.id, genres: [], initialized: false
             };
         }));
     }
