@@ -1,6 +1,6 @@
 var SourceExtension = class {
     constructor() {
-        this.id = "mangadex_en";
+        this.id = "mangadex.en";
         this.name = "MangaDex";
         this.lang = "en";
         this.version = "1.0.0";
